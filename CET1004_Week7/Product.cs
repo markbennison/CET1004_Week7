@@ -8,6 +8,7 @@ namespace CET1004_Week7
     {
         string name;
         int quantity;
+        public static List<Product> products = new List<Product>();
 
         Product()
         {
@@ -21,7 +22,7 @@ namespace CET1004_Week7
             this.quantity = quantity;  
         }
 
-        public static List<Product> products = new List<Product>();
+
 
         public string Name
         {

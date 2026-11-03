@@ -1,10 +1,35 @@
-﻿namespace CET1004_Week7
+﻿using System.IO;
+
+namespace CET1004_Week7
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-          
+            Console.WriteLine("How many notes would you like?");
+            int numberOfNotes = Convert.ToInt32(Console.ReadLine());
+
+            string[] notes = new string[numberOfNotes];
+
+            for (int i = 0; i < numberOfNotes; i++)
+            {
+                Console.WriteLine("Enter note " + (i + 1) + ":");
+                notes[i] = Console.ReadLine();
+
+            }
+
+            Console.WriteLine("Enter a filename");
+            string filename = Console.ReadLine() + ".txt";
+
+            using (StreamWriter sw = new StreamWriter(filename, true))
+            {
+                for (int i = 0; i < notes.Length; i++)
+                {
+                    sw.WriteLine(notes[i]);
+                }
+            }
+
+
         }
 
 
@@ -60,4 +85,5 @@
 
         }
     }
+
 }
