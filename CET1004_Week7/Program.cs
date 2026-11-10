@@ -18,18 +18,8 @@ namespace CET1004_Week7
 
             }
 
-            Console.WriteLine("Enter a filename");
-            string filename = Console.ReadLine() + ".txt";
-
-            using (StreamWriter sw = new StreamWriter(filename, true))
-            {
-                for (int i = 0; i < notes.Length; i++)
-                {
-                    sw.WriteLine(notes[i]);
-                }
-            }
-
-
+            InputOutput.WriteToFile(notes);
+            InputOutput.ReadFromFile();  
         }
 
 
